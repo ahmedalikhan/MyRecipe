@@ -1,24 +1,13 @@
-# README
+testing specs for recipes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+name: string
+summary: text
+description: text
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- naem must be present
+- name must be between 5 char < 100 char
+- summary must be present
+- summary must be between 5 char < 150 char
+- description must be present
+- description must be between 20 char < 200 char
+ chef_id must be present
