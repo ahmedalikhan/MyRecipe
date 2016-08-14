@@ -4,7 +4,7 @@ name: string
 summary: text
 description: text
 
-- naem must be present
+- name must be present
 - name must be between 5 char < 100 char
 - summary must be present
 - summary must be between 5 char < 150 char
