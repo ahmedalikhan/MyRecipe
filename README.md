@@ -10,4 +10,4 @@ description: text
 - summary must be between 5 char < 150 char
 - description must be present
 - description must be between 20 char < 200 char
- chef_id must be present
+- chef_id must be present
