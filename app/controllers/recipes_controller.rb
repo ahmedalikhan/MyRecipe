@@ -1,17 +1,16 @@
 class RecipesController < ApplicationController
 
-def index
-@recipes = Recipe.all
+	def index
+		@recipes = Recipe.paginate(page: params[:page], per_page: 4)
+	end
 
-end
+	def show
+		@recipe = Recipe.find(params[:id])
+	end
 
-def show
-@recipe = Recipe.find(params[:id])
-end
-
-def new
-@recipe = Recipe.new
-end
+	def new
+		@recipe = Recipe.new
+	end
 
 def create
 @recipe =Recipe.new(recipe_params)
@@ -31,16 +30,27 @@ def edit
 end
 
 def update
-@recipe = Recipe.find(params[:id])
-if @recipe.update(recipe_params)
-	flash[:success] = "Your Recipe was updated successfully!"
-	redirect_to recipe_path(@recipe)
+	@recipe = Recipe.find(params[:id])
+		if @recipe.update(recipe_params)
+		flash[:success] = "Your Recipe was updated successfully!"
+		redirect_to recipe_path(@recipe)
 	else
 
 		render :edit
 	end
 end
 
+	def like
+		@recipe = Recipe.find(params[:id])
+		like = Like.create(like: params[:like], chef: Chef.first, recipe: @recipe)
+		if like.valid?
+			flash[:success] = "Your selection was successful"
+			redirect_to :back
+		else
+			flash[:danger] = "You can only like/dislike a recipe once"
+			redirect_to :back
+		end
+	end
 
 
 private 
