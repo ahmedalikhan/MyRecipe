@@ -1,13 +1,15 @@
-testing specs for recipes
+Updating Chefs:
 
-name: string
-summary: text
-description: text
+What we have already
+- Chef models
+- Chef table with columns, chefname and email
 
-- name must be present
-- name must be between 5 char < 100 char
-- summary must be present
-- summary must be between 5 char < 150 char
-- description must be present
-- description must be between 20 char < 200 char
-- chef_id must be present
+What we need to do:
+- Add passwords to the chefs table so chefs can be authenticated and logged in
+- Use email as log in credentials, since email is unique
+- Ability to register new chef
+- Ability to display chefs profile
+- Ability to list chef using the app
+- Ability for chefs to loh in and log out of the app
+- Restrict actions like create recipe, edit recipe and like feature to logged in chefs only
+- Restricting edit of recipes by chefs who created the recipes
